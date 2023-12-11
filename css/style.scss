@@ -129,11 +129,10 @@ h3,
     word-wrap: break-word;
     line-height: 2rem;
     text-align: center;
-    text-indent: 2rem;
 
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: calc(50% + 1rem);
     transform: translate(-50%, -50%);
 
     @media (min-width: 768px) {
@@ -151,11 +150,10 @@ h4,
     word-wrap: break-word;
     line-height: 2rem;
     text-align: center;
-    text-indent: 2rem;
 
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: calc(50% + 1rem);
     transform: translate(-50%, -50%);
 }
 
