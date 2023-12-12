@@ -276,6 +276,16 @@ picture {
       }
     }
   }
+
+  &--dark {
+    .nav-wrapper__list {
+      background-color: #d07e27;
+
+      a {
+        color: $bgColor;
+      }
+    }
+  }
 }
 
 .overlay {
@@ -292,6 +302,7 @@ picture {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  padding: 0;
 
   &-left {
     height: 100vh;
@@ -304,6 +315,10 @@ picture {
   }
 
   &-right {
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
     &__img {
       margin-bottom: 0.5rem;
       position: relative;
