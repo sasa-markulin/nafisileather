@@ -33,6 +33,11 @@
 }
 
 $bgColor: #fff8ea;
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+$xxl: 1400px;
 
 *,
 *::before,
@@ -369,22 +374,6 @@ picture {
       max-height: 100vh;
     }
   }
-}
-
-$sm: 576px;
-$md: 768px;
-$lg: 992px;
-$xl: 1200px;
-$xxl: 1400px;
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
 }
 
 img {
