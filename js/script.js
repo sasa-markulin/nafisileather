@@ -28,7 +28,7 @@ if (gallery) {
       const mainSlide = document.createElement("div");
       mainSlide.className = "swiper-slide";
       const mainImage = document.createElement("img");
-      mainImage.src = "images/" + imageName;
+      mainImage.src = "img/" + imageName;
       mainSlide.appendChild(mainImage);
       mainSwiperWrapper.appendChild(mainSlide);
 
@@ -36,7 +36,7 @@ if (gallery) {
       const paginationSlide = document.createElement("div");
       paginationSlide.className = "swiper-slide";
       const paginationImage = document.createElement("img");
-      paginationImage.src = "images/" + imageName;
+      paginationImage.src = "img/" + imageName;
       paginationSlide.appendChild(paginationImage);
       paginationSwiperWrapper.appendChild(paginationSlide);
     });
@@ -56,10 +56,12 @@ if (gallery) {
     });
 
     productModal.classList.add("active");
+    document.body.classList.add("active");
   }
 
   function closeProductModal() {
     productModal.classList.remove("active");
+    document.body.classList.remove("active");
   }
 
   gallery.addEventListener("click", (event) => {
@@ -71,11 +73,15 @@ if (gallery) {
     }
   });
 
-  //   // Event listener to open the modal when a product is clicked
-  //   document
-  //     .getElementById("productLink")
-  //     .addEventListener("click", openProductModal);
+  productModal.addEventListener("click", (event) => {
+    if (event.target.classList.contains("modal")) {
+      closeProductModal();
+    }
+  });
 
-  //   // Event listener to close the modal when the close button is clicked
-  //   document.querySelector(".close").addEventListener("click", closeProductModal);
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") {
+      closeProductModal();
+    }
+  });
 }
