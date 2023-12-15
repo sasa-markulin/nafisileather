@@ -32,7 +32,8 @@
   font-display: swap;
 }
 
-$bgColor: #fff8ea;
+$lightColor: #fff8ea;
+$darkColor: #2b2a29;
 $sm: 576px;
 $md: 768px;
 $lg: 992px;
@@ -67,8 +68,8 @@ html {
 body {
   font-size: 1rem;
   margin: 0;
-  background-color: $bgColor;
-  color: #2b2a29;
+  background-color: $lightColor;
+  color: $darkColor;
   font-family: "Raleway";
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
@@ -92,14 +93,14 @@ body {
 }
 
 a {
-  color: #2b2a29;
+  color: $darkColor;
   text-decoration: none;
 }
 
 p {
   line-height: 1.5;
   font-size: 1rem;
-  color: #2b2a29;
+  color: $darkColor;
   margin-bottom: 1rem;
 }
 
@@ -121,7 +122,7 @@ h4,
   font-style: normal;
   line-height: 1;
   letter-spacing: -0.05rem;
-  color: #2b2a29;
+  color: $darkColor;
 }
 
 h1,
@@ -146,7 +147,7 @@ h3,
 .h3 {
   font-size: 1.25rem;
   text-transform: uppercase;
-  color: $bgColor;
+  color: $lightColor;
   max-width: 100%;
   word-wrap: break-word;
   line-height: 2rem;
@@ -161,7 +162,7 @@ h4,
 .h4 {
   font-size: 1rem;
   text-transform: uppercase;
-  color: $bgColor;
+  color: $lightColor;
   max-width: 100%;
   word-wrap: break-word;
   line-height: 2rem;
@@ -210,7 +211,7 @@ picture {
         height: 0.063rem;
         bottom: -0.05rem;
         left: 0;
-        background-color: #2b2a29;
+        background-color: $darkColor;
         transform-origin: bottom right;
         transition: transform 0.25s ease-out;
       }
@@ -224,11 +225,11 @@ picture {
     &__logo {
       width: 5rem;
       padding: 0.5rem;
-      background-color: $bgColor;
+      background-color: $lightColor;
       border-radius: 0.5rem;
       z-index: 2;
       transition: width 0.3s ease, padding 0.3s ease;
-      border: 0.063rem solid #2b2a29;
+      border: 0.063rem solid $darkColor;
 
       @media (min-width: $md) {
         width: 6rem;
@@ -247,20 +248,20 @@ picture {
     }
 
     &__toggle {
-      background-color: $bgColor;
+      background-color: $lightColor;
       height: fit-content;
       padding: 0.5rem;
       cursor: pointer;
       border-radius: 0.5rem;
       z-index: 2;
-      border: 0.063rem solid #2b2a29;
+      border: 0.063rem solid $darkColor;
 
       @media (min-width: 576px) {
         display: none;
       }
 
       &__line {
-        background-color: #2b2a29;
+        background-color: $darkColor;
         width: 2rem;
         height: 0.063rem;
         margin: 0.5rem;
@@ -291,12 +292,12 @@ picture {
       top: 0;
       margin: 0;
       opacity: 0;
-      background-color: $bgColor;
+      background-color: $lightColor;
       padding: 10rem 0;
       text-align: center;
       pointer-events: none;
       transition: opacity 0.3s ease, padding 0.3s ease;
-      border: 0.063rem solid #2b2a29;
+      border: 0.063rem solid $darkColor;
 
       li {
         padding: 1rem;
@@ -645,7 +646,7 @@ section {
       position: absolute;
       height: 0.063rem;
       width: calc(100% - 4rem);
-      background-color: #2b2a29;
+      background-color: $darkColor;
       top: 0;
       left: 2rem;
     }
@@ -686,7 +687,7 @@ section {
           height: 0.063rem;
           bottom: -0.05rem;
           left: 0;
-          background-color: #2b2a29;
+          background-color: $darkColor;
           transform-origin: bottom right;
           transition: transform 0.25s ease-out;
         }
@@ -716,7 +717,7 @@ section {
           height: 0.063rem;
           bottom: -0.05rem;
           left: 0;
-          background-color: #2b2a29;
+          background-color: $darkColor;
           transform-origin: bottom right;
           transition: transform 0.25s ease-out;
         }
@@ -821,5 +822,50 @@ section {
   img {
     height: 100%;
     object-fit: cover;
+  }
+}
+
+.info {
+  text-align: center;
+  padding: 1rem;
+  border: 0.063rem solid $darkColor;
+  border-radius: 0.5rem;
+  margin: 0 auto;
+  margin-top: 1rem;
+  width: fit-content;
+
+  &-wrapper {
+    padding: 1rem;
+    margin: 0 auto;
+    margin-top: 1rem;
+    width: fit-content;
+    border: 0.063rem solid #000;
+    border-radius: 0.5rem;
+    background-color: #000;
+
+    a {
+      color: $lightColor;
+      font-weight: 700;
+      display: inline-block;
+      position: relative;
+
+      &:after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 0.063rem;
+        bottom: -0.05rem;
+        left: 0;
+        background-color: $lightColor;
+        transform-origin: bottom right;
+        transition: transform 0.25s ease-out;
+      }
+
+      &:hover:after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+      }
+    }
   }
 }
